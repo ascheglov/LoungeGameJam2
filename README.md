@@ -8,6 +8,30 @@ On a small island a **herd** of sheep is trying to **escape** from a fenced area
 
 You have to **repair** fence to prevent them from escaping.
 
+## Screenshot
+
+```
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~                ~~~~~~~
+    ~~~~                      ~~~~
+    ~~       @   @   @   @     ~~~
+    ~                            ~
+    ~                            ~
+    ~~       @   @   @   @      ~~
+    ~~                          ~~
+    ~~              I          ~~~
+    ~~~~~                    ~~~~~
+    ~~~~~~##################~~~~~~
+    ~~~~~   s                 ~~~~
+    ~~~~~                      ~~~
+    ~~~~~~            S      ~~~~~
+    ~~~~~~~       s         ~~~~~~
+    ~~~~~~~~           ~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    WASD to move, ESC to exit
+```
+
 ## License
 
 Project is placed in the public domain.
