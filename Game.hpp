@@ -25,7 +25,7 @@ struct Object : Drawable
 template<char C, typename Derived, typename Base = Object>
 struct ObjectHelper : Base
 {
-    ObjectHelper() { m_type = C; }
+    ObjectHelper() { this->m_type = C; }
     static const char kDefaultImage = C;
     virtual char image() { return C; }
 };
@@ -67,22 +67,6 @@ struct Game
     }
 
     template<class...> struct Factory;
-
-    template<class T, class... Ts>
-    struct Factory<T, Ts...>
-    {
-        static Object* create(Game& game, char c)
-        {
-            if (c == T::kDefaultImage) return game.spawn<T>();
-            return Factory<Ts...>::create(game, c);
-        }
-    };
-
-    template<>
-    struct Factory<>
-    {
-        static Object* create(Game&, char) { return nullptr; }
-    };
 
     template<class... Ts>
     void init(const std::string& field)
@@ -148,3 +132,18 @@ struct Game
     }
 };
 
+template<class T, class... Ts>
+struct Game::Factory<T, Ts...>
+{
+    static Object* create(Game& game, char c)
+    {
+        if (c == T::kDefaultImage) return game.spawn<T>();
+        return Factory<Ts...>::create(game, c);
+    }
+};
+
+template<>
+struct Game::Factory<>
+{
+    static Object* create(Game&, char) { return nullptr; }
+};

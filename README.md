@@ -38,4 +38,5 @@ Project is placed in the public domain.
 
 ## Building
 
-Build the sln file with MSVC 2013
+Build the sln file with MSVC 2013,  
+or just do `g++ -std=c++11 game.cpp & a.exe`
